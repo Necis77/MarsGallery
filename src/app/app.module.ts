@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListImagesComponent } from './list-images/list-images.component';
 import { ListImagesItemComponent } from './list-images-item/list-images-item.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,11 +14,12 @@ import { ListImagesItemComponent } from './list-images-item/list-images-item.com
     ListImagesComponent,
     ListImagesItemComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
