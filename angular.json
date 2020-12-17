@@ -147,5 +147,8 @@
       }
     }
   },
-  "defaultProject": "MarsGallery"
+  "defaultProject": "MarsGallery",
+  "cli": {
+    "analytics": false
+  }
 }
