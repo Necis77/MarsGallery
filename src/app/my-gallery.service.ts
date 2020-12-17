@@ -11,5 +11,10 @@ export class MyGalleryService {
 
   addPhoto(photo : any) {
     this.favorites.push(photo);
+    console.log(this.favorites);
+  }
+
+  getFavorites(){
+    return this.favorites;
   }
 }
