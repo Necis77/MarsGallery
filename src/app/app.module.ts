@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,8 @@ import { ListImagesItemComponent } from './list-images-item/list-images-item.com
 import { PerDaysPhotosComponent } from './per-days-photos/per-days-photos.component';
 import { MyPhotosGalleryComponent } from './my-photos-gallery/my-photos-gallery.component';
 import { HeaderComponent } from './components/header/header.component';
-import {FormsModule} from '@angular/forms';
+import { GetMarsImagesService } from './get-mars-images.service';
+import { MyGalleryService } from './my-gallery.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,10 @@ import {FormsModule} from '@angular/forms';
         HttpClientModule,
         FormsModule
     ],
-  providers: [],
+  providers: [
+    GetMarsImagesService,
+    MyGalleryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

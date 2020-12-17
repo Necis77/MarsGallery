@@ -13,7 +13,7 @@
       <p style="color: red"> ERROR : l'API n'a rien renvoyé. Verifier la date.</p>
     </div>
     <div *ngFor="let image of images" class="col-md-4 image-ligne">
-        <app-list-images-item [marsImage]="image"></app-list-images-item>
+        <app-list-images-item [marsImage]="image" (click)="onClick($event.target)"></app-list-images-item>
       </div>
     </div>
 </div>
