@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {GetMarsImagesService} from "../get-mars-images.service";
 
 @Component({
@@ -12,6 +12,9 @@ export class ListImagesComponent implements OnInit {
   Day;
   Month;
   Year;
+
+  @Output()
+  imageClick = new EventEmitter();
 
   errorCatch = false;
   constructor(private marsImagesService: GetMarsImagesService) { }
@@ -30,6 +33,10 @@ export class ListImagesComponent implements OnInit {
         this.images = null;
       }
     );
+  }
+
+  onClick(event: Event){
+    this.imageClick.emit(event);
   }
 
 }
