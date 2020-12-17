@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +19,16 @@ export class GetMarsImagesService {
       img_src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLX82z6xPHbb3l2F1L6CnzrzUkKt77bO-PGQ&usqp=CAU'
     }];
 
+    private ApiKey : string = "wx3ke6Hvs8pM1Xb7BfnWasHUbLDttXysbsSZS8EM";
+    private ApiUrl : string = "https://api.nasa.gov/";
 
-  constructor() { }
+
+  constructor(private httpClient : HttpClient) { }
 
 
 
-  GetMarsImages(): any {
-    return this.marsPhotos;
+  GetMarsImagesFromApi(): any {
+    // return this.marsPhotos;
+    return this.httpClient.get(this.ApiUrl + 'mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-10-10&api_key='+ this.ApiKey);
   }
 }
