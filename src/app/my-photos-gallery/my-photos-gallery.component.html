@@ -1,1 +1,7 @@
-<p>my-photos-gallery works!</p>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let image of favorites" class="col-md-4 image-ligne">
+          <app-list-images-item [marsImage]="image"></app-list-images-item>
+        </div>
+      </div>
+  </div>
