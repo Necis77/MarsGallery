@@ -1,7 +1,19 @@
+
+<label>Day</label>
+<input type="text" class="form-control" [(ngModel)] = "Day">
+<label>Month</label>
+<input type="text" class="form-control" [(ngModel)] = "Month">
+<label>Year</label>
+<input type="text" class="form-control" [(ngModel)] = "Year">
+<input type="button" class="active" (click)="refreshImages()">
+
 <div class="container">
-    <div class="image-ligne row">
-        <div *ngFor="let image of images" class="col-md-4">
-            <app-list-images-item [marsImage]="image"></app-list-images-item>
-        </div>  
+  <div class="row">
+    <div *ngIf="errorCatch == true">
+      <p style="color: red"> ERROR : l'API n'a rien renvoyé. Verifier la date.</p>
+    </div>
+    <div *ngFor="let image of images" class="col-md-4 image-ligne">
+        <app-list-images-item [marsImage]="image"></app-list-images-item>
+      </div>
     </div>
 </div>
