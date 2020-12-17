@@ -6,7 +6,6 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./list-images-item.component.css']
 })
 export class ListImagesItemComponent implements OnInit {
-
   @Input()
   marsImage: any;
 

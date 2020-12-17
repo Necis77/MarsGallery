@@ -1,3 +1,7 @@
-<div *ngFor="let image of images">
-    <list-images-item [marsImage]="images"></list-images-item>
+<div class="container">
+    <div class="image-ligne row">
+        <div *ngFor="let image of images" class="col-md-4">
+            <app-list-images-item [marsImage]="image"></app-list-images-item>
+        </div>  
+    </div>
 </div>
