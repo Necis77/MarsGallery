@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="row">
-        <div *ngFor="let image of favorites" class="col-md-4 image-ligne">
+<div class="container-fluid">
+    <div class="row justify-content-md-center">
+        <div *ngFor="let image of favorites" class="card bg-info text-light col-3 d-flex flex-column justify-content-between mt-3 ml-3">
           <app-list-images-item [marsImage]="image"></app-list-images-item>
         </div>
       </div>

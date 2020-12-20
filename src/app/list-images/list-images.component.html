@@ -18,7 +18,7 @@
       </button>
     </div>
     <div *ngFor="let image of images" class="card bg-info text-light col-3 d-flex flex-column justify-content-between mt-3 ml-3">
-      <app-list-images-item [marsImage]="image" (click)="onClick($event.target)" class="img-mars"></app-list-images-item>
+      <app-list-images-item [marsImage]="image" class="img-mars"></app-list-images-item>
       <div class="card-footer">
         <button class="btn btn-success align-self-end" ngbPopover="Ajouter!" (click)="onClick($event.target)">Ajouter aux favoris</button>
       </div>
