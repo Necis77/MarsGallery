@@ -5,16 +5,20 @@ import { Injectable } from '@angular/core';
 })
 export class MyGalleryService {
 
-  favorites : any = [];
 
   constructor() { }
 
-  addPhoto(photo : any) {
-    this.favorites.push(photo);
-    console.log(this.favorites);
+  addPhoto(photo: any) {
+    localStorage.setItem(String(localStorage.length), photo.src);
+    console.log(photo.src);
   }
 
   getFavorites(){
-    return this.favorites;
+    let favorites = [];
+    console.log(localStorage.length);
+    for (let i = 0; i < localStorage.length; i++){
+        favorites.push(localStorage.getItem(String(i)));
+    }
+    return favorites;
   }
 }
