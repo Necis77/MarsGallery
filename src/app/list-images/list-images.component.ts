@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {GetMarsImagesService} from "../get-mars-images.service";
 
+declare var jquery:any;
+declare var $ :any;
+
 @Component({
   selector: 'app-list-images',
   templateUrl: './list-images.component.html',
@@ -29,14 +32,16 @@ export class ListImagesComponent implements OnInit {
       },
       (error) => {
         this.errorCatch = true;
-        console.log('toto' + error);
         this.images = null;
       }
     );
   }
 
-  onClick(event: Event){
-    this.imageClick.emit(event);
+  onClick(event: any){
+    this.imageClick.emit(event.parentNode.parentNode.childNodes[0].childNodes[0]);
+    event.disabled = true;
+    console.log(event);
+    event.textContent = "Ajouté"!;
   }
 
 }

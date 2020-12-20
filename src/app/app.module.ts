@@ -12,6 +12,7 @@ import { MyPhotosGalleryComponent } from './my-photos-gallery/my-photos-gallery.
 import { HeaderComponent } from './components/header/header.component';
 import { GetMarsImagesService } from './get-mars-images.service';
 import { MyGalleryService } from './my-gallery.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MyGalleryService } from './my-gallery.service';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        NgbModule
     ],
   providers: [
     GetMarsImagesService,
